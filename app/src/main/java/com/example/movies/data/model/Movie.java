@@ -1,4 +1,4 @@
-package com.example.movies.model;
+package com.example.movies.data.model;
 
 import android.graphics.Bitmap;
 
@@ -7,10 +7,10 @@ import java.io.Serializable;
 public class Movie implements Serializable {
 
     private String title;
-    private Bitmap Photo;
+    private int Photo;
     private String description;
 
-    public Movie(String title, Bitmap photo, String description) {
+    public Movie(String title, int photo, String description) {
         this.title = title;
         Photo = photo;
         this.description = description;
@@ -24,11 +24,11 @@ public class Movie implements Serializable {
         this.title = title;
     }
 
-    public Bitmap getPhoto() {
+    public int getPhoto() {
         return Photo;
     }
 
-    public void setPhoto(Bitmap photo) {
+    public void setPhoto(int photo) {
         Photo = photo;
     }
 

@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.movies.databinding.ItemMovieLayoutBinding;
 import com.example.movies.events.OnClickListener;
-import com.example.movies.model.Movie;
+import com.example.movies.data.model.Movie;
 
 import java.util.List;
 
@@ -33,11 +33,16 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
-        holder.bind(movies.get(position), listener);
+        holder.render(movies.get(position), listener);
     }
 
     @Override
     public int getItemCount() {
         return movies.size();
+    }
+
+    public void setMovies(List<Movie> movies) {
+        this.movies = movies;
+        this.notifyDataSetChanged();
     }
 }
