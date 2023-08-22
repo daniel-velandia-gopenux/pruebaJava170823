@@ -1,7 +1,5 @@
 package com.example.movies.data.model;
 
-import com.example.movies.R;
-
 import java.util.ArrayList;
 import java.util.List;
 

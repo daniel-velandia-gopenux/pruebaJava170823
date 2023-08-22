@@ -1,13 +1,10 @@
 package com.example.movies.UI.viewModel;
 
 import android.os.Handler;
-
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-
 import com.example.movies.data.model.Movie;
 import com.example.movies.domain.GetMoviesUseCase;
-
 import java.util.List;
 
 public class MainViewModel extends ViewModel {
@@ -26,11 +23,11 @@ public class MainViewModel extends ViewModel {
     }
 
     public MutableLiveData<List<Movie>> getMovies() {
-        return movies;
+        return this.movies;
     }
 
     public MutableLiveData<Boolean> isLoading() {
-        return loading;
+        return this.loading;
     }
 
     public void setLoading(Boolean loading) {
@@ -39,12 +36,14 @@ public class MainViewModel extends ViewModel {
 
     private void simulateServerResponseDelay() {
         Handler handler = new Handler();
+        int timeOutInMilliseconds = 2000;
+
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 movies.postValue(getMoviesUseCase.getMovies());
             }
-        }, 2000);
+        }, timeOutInMilliseconds);
     }
 
 }

@@ -1,7 +1,5 @@
 package com.example.movies.data.model;
 
-import android.graphics.Bitmap;
-
 import java.io.Serializable;
 
 public class Movie implements Serializable {

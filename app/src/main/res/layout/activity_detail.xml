@@ -10,20 +10,25 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/ivMoviePhoto"
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="@dimen/image_height_detail"
-            android:scaleType="fitXY"
-            style="@style/border_radius_cardview"
-            />
+            android:layout_margin="@dimen/tiny_margin"
+            >
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivMoviePhoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                />
+        </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvMovieTitle"
             android:layout_marginHorizontal="@dimen/big_margin"
             android:layout_marginTop="@dimen/big_margin"
             android:textStyle="bold"
-            android:textSize="@dimen/text_size"
+            android:textSize="@dimen/text_title_detail"
             tools:text="Title"
             android:textAlignment="center"
             android:layout_width="match_parent"
@@ -34,7 +39,7 @@
             android:layout_marginHorizontal="@dimen/big_margin"
             android:layout_marginTop="@dimen/big_margin"
             android:textStyle="bold"
-            android:textSize="@dimen/text_size"
+            android:textSize="@dimen/text_title_detail"
             android:text="Overview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,6 +50,7 @@
             android:layout_marginHorizontal="@dimen/big_margin"
             android:layout_marginVertical="@dimen/small_margin"
             tools:text="text"
+            android:textSize="@dimen/text_content_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
