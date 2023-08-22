@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.movies.databinding.ItemMovieLayoutBinding;
 import com.example.movies.events.OnClickListener;
 import com.example.movies.data.model.Movie;
+import com.example.movies.utils.ImageConvert;
 
 public class MovieViewHolder extends RecyclerView.ViewHolder {
 
@@ -18,7 +19,8 @@ public class MovieViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void render(Movie movie, OnClickListener listener) {
-        binding.ivMoviePhoto.setImageResource(movie.getPhoto());
+        ImageConvert.convertImageToBitmap(binding.getRoot().getContext(), movie.getPhotoPath(),
+                binding.ivMoviePhoto);
         binding.tvMovieTitle.setText(movie.getTitle());
 
         itemView.setOnClickListener(new View.OnClickListener() {

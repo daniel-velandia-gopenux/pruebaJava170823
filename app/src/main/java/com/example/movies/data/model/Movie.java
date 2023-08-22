@@ -7,12 +7,12 @@ import java.io.Serializable;
 public class Movie implements Serializable {
 
     private String title;
-    private int Photo;
+    private String PhotoPath;
     private String description;
 
-    public Movie(String title, int photo, String description) {
+    public Movie(String title, String photoPath, String description) {
         this.title = title;
-        Photo = photo;
+        PhotoPath = photoPath;
         this.description = description;
     }
 
@@ -24,12 +24,12 @@ public class Movie implements Serializable {
         this.title = title;
     }
 
-    public int getPhoto() {
-        return Photo;
+    public String getPhotoPath() {
+        return PhotoPath;
     }
 
-    public void setPhoto(int photo) {
-        Photo = photo;
+    public void setPhotoPath(String photoPath) {
+        PhotoPath = photoPath;
     }
 
     public String getDescription() {

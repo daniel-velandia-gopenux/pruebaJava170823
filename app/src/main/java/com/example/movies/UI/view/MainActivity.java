@@ -47,10 +47,11 @@ public class MainActivity extends AppCompatActivity {
         mainViewModel.isLoading().observe(this, new Observer<Boolean>() {
             @Override
             public void onChanged(Boolean isLoading) {
+                String movieCount = "Movies: ";
+                String loadingCount = "Loading movies...";
                 binding.clLoading.setVisibility(isLoading ? View.VISIBLE : View.GONE);
                 binding.recyclerView.setVisibility(!isLoading ? View.VISIBLE : View.GONE);
-                binding.tvMoviesCount.setText(!isLoading ? "Movies: " + moviesCount :
-                        "Loading movies..." );
+                binding.tvMoviesCount.setText(!isLoading ? movieCount + moviesCount : loadingCount);
             }
         });
     }
